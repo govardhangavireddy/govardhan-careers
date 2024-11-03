@@ -18,18 +18,9 @@
         </div>
         <div>
             <h2 class="text-center mt-2 mb-4">Job Openings</h2>
-            <div>
-                {% for job in jobs %}
-                <div class="mb-4">
-                    <h4>{{job['title']}}</h4>
-                    <div class="lead"><b>Location : </b>{{job['location']}}</div>
-                    {% if 'Salary' in job %}
-                    <div class="lead"><b>Salary : </b>{{job['Salary']}}</div>
-                    {% endif %}
-                </div>
-                {% endfor %}    
-
-            </div>
+            {% for job in jobs %}
+                {% include 'jobitem.html' %}
+            {% endfor %}
         </div>
         <div class="text-center">
             <button type="button" class="btn btn-primary btn-lg">Contact Us</button>
